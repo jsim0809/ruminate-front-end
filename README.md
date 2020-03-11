@@ -1,6 +1,14 @@
 # Project Name
 
-> Project description
+Guilt Trip Advisor - Q&A Component
+
+This is a reverse-engineered copy of a "Questions & Answers" component found on Tripadvisor.com's Restaurants section.
+
+This component was created by Jeremy Sim in March 2020 as part of a software engineering exercise at HackReactor Seattle. The goal was to replicate an existing website module as closely as possible in looks and functionality, from scratch.
+
+It utilizes a MongoDB database, a server written using Express, and a React architecture for the client-facing front end.
+
+Collaborating team members, who each worked on a separate component, were Katharine Celentano, Seth Way, and Phonxay Champasouk.
 
 ## Related Projects
 
