@@ -12,7 +12,8 @@
     "start-dev": "nodemon server/index.js",
     "build": "webpack",
     "build-dev": "webpack --watch",
-    "seed": "node database/seedDB.js"
+    "seed": "node database/seedDB.js",
+    "test": "node testing/test.js"
   },
   "dependencies": {
     "express": "^4.17.1",
