@@ -8,7 +8,7 @@ This component was created by Jeremy Sim in March 2020 as part of a software eng
 
 It utilizes a MongoDB database, a server written using Express, and a React architecture for the client-facing front end.
 
-Collaborating team members, who each worked on a separate component, were Katharine Celentano, Sethaniel Way, and Phonxay Champasouk.
+Collaborating team members, who each worked on a separate component, were Katharine Celentano, Seth Way, and Phonxay Champasouk.
 
 ## Related Projects
 
@@ -41,4 +41,3 @@ From within the root directory:
 npm install -g webpack
 npm install
 ```
-
