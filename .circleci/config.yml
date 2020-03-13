@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  node: circleci/node@1.1.6
+  node: circleci/node@4.8.2
 jobs:
   build-and-test:
     executor:
@@ -9,8 +9,10 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: npm install
-            - run: npm test
+            - checkout # check out the code in the project directory
+            - run: echo "hello world" # run the `echo` command
+            # - run: npm install
+            # - run: npm test
 workflows:
     build-and-test:
       jobs:
