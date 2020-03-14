@@ -1,5 +1,5 @@
-const Question = require('../database/index');
 const faker = require('faker');
+const Question = require('../database/index');
 
 // Example code to seed 1 datum into the database.
 //
@@ -119,6 +119,11 @@ const seedDB = () => {
         console.error(err);
       }
     });
+
+    // Repeats about 9 times for each restaurant
+    if (Math.random() < 0.9) {
+      i -= 1;
+    }
   }
 };
 

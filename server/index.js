@@ -10,8 +10,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
 
 app.get('/api/questions/:restaurantID', (req, res) => {
+  const { restaurantID } = req.params;
+  Question.find({ restaurant_id: restaurantID }, (err, questions) => {
+    if (err) {
+      res.sendStatus(500);
+    }
+    res.status(200).send(questions);
+  });
   // TODO: grab all questions associated with a restaurantID
-  res.send();
 });
 
 // STRETCH TODO: Store Authors as their own document type
