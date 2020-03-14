@@ -13,11 +13,12 @@
     "build": "webpack",
     "build-dev": "webpack --watch",
     "seed": "node database/seedDB.js",
-    "test": "node testing/test.js"
+    "test": "jest"
   },
   "dependencies": {
     "express": "^4.17.1",
     "faker": "^4.1.0",
+    "jest": "^25.1.0",
     "mongoose": "^5.9.4",
     "nodemon": "^2.0.2",
     "path": "^0.12.7",
