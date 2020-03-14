@@ -7,4 +7,5 @@ jobs:
       - checkout # check out the code in the project directory
       - run: npm install
       - run: npm test
+      - run: npm run lint
 
