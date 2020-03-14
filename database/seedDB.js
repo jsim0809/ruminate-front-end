@@ -119,14 +119,11 @@ const seedDB = () => {
         console.error(err);
       }
     });
-<<<<<<< HEAD
-=======
 
     // Repeats about 9 times for each restaurant
     if (Math.random() < 0.9) {
       i -= 1;
     }
->>>>>>> 18d2fae9b843029231723aff57ec7f77a5b175da
   }
 };
 

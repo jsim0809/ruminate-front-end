@@ -13,12 +13,8 @@
     "build": "webpack",
     "build-dev": "webpack --watch",
     "seed": "node database/seedDB.js",
-<<<<<<< HEAD
     "test": "jest",
     "lint": "eslint ."
-=======
-    "test": "jest"
->>>>>>> Finishes up work on testing branch for now. Basic CircleCI and Jest functionality are active.
   },
   "dependencies": {
     "express": "^4.17.1",
