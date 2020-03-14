@@ -1,9 +1,5 @@
+package-lock.json
 package.json
-<<<<<<< HEAD
 **/bundle.js
 **/*.test.js
 **/*.test.jsx
-=======
-**/*.test.js
-**/*.test.jsx
->>>>>>> Sets up very basic Jest functionality. Does not yet work with JSX files.
