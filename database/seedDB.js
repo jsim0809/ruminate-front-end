@@ -1,7 +1,7 @@
 const faker = require('faker');
 const Question = require('../database/index');
 
-// Example code to seed 1 datum into the database.
+// This is what an example datum looks like:
 //
 // const theFirstQuestion = new Question({
 //   text: 'What is the answer to the ultimate question of life, the universe, and everything?',
@@ -52,12 +52,6 @@ const Question = require('../database/index');
 //     index: 1,
 //     votes: 31,
 //   }],
-// });
-
-// theFirstQuestion.save((err) => {
-//   if (err) {
-//     console.error(err);
-//   }
 // });
 
 const seedDB = () => {
