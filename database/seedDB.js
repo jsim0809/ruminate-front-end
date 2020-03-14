@@ -1,5 +1,5 @@
-const Question = require('../database/index');
 const faker = require('faker');
+const Question = require('../database/index');
 
 // Example code to seed 1 datum into the database.
 //
