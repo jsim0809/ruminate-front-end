@@ -1,7 +1,7 @@
 import React from 'react';
 import QWithAs from './QWithAs';
 
-class QsAndAsBox extends React.Component {
+class QWithAs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,4 +21,4 @@ class QsAndAsBox extends React.Component {
   }
 }
 
-export default QsAndAsBox;
+export default QWithAs;

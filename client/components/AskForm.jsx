@@ -1,4 +1,5 @@
 import React from 'react';
+import GuidelinesModal from './GuidelinesModal';
 
 class AskForm extends React.Component {
   constructor(props) {
@@ -10,7 +11,10 @@ class AskForm extends React.Component {
 
   render() {
     return (
-      <div>Ask Form</div>
+      <div>
+        <div>Ask Form</div>
+        <GuidelinesModal />
+      </div>
     );
   }
 }
