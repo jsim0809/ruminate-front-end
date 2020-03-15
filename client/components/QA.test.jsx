@@ -7,5 +7,5 @@ it('renders correctly', () => {
   const wrapper = Enzyme.shallow(<QA />);
 
   expect(wrapper.length).toBe(1);
-  expect(wrapper.text()).toBe('Questions & Answers');
+  expect(wrapper.text()).toBe(`Questions & Answers<AllQuestionsLink /><AskButton /><AskForm /><QsAndAsBox />`);
 });
