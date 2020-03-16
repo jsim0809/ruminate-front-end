@@ -1,4 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import QA from './components/QA';
 
-ReactDOM.render(<div>This appears when Webpack is set up.</div>, document.getElementById('q-a'));
+ReactDOM.render(<QA />, document.getElementById('q-a'));
