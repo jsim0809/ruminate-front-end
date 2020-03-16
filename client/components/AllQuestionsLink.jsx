@@ -1,8 +1,8 @@
 import React from 'react';
 
-const AllQuestionsLink = ({ questionsCount }) => (
+const AllQuestionsLink = ({ questionsCount, restaurantID }) => (
   <div id="all-questions-link">
-    <a href="/">
+    <a href={`/${restaurantID}/`}>
       {`See all ${questionsCount} questions`}
     </a>
   </div>

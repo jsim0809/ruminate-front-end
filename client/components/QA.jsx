@@ -18,33 +18,29 @@ class QA extends React.Component {
 
   componentDidMount() {
     const { restaurantID } = this.state;
-    fetch(`http://localhost:3004/api/questions/${restaurantID}/`)
+    fetch(`/api/questions/${restaurantID}/`)
       .then((data) => data.json())
       .then((questions) => {
-        this.setState((oldState) => {
-          const newState = { ...oldState };
-          newState.questions = questions;
-          return newState;
+        this.setState({
+          questions,
         });
       });
   }
 
   handleAskButtonClick() {
-    this.setState((oldState) => {
-      const newState = { ...oldState };
-      newState.showAskForm = true;
-      return newState;
+    this.setState({
+      showAskForm: true,
     });
   }
 
   render() {
-    const { showAskForm } = this.state;
+    const { restaurantID, showAskForm, questions } = this.state;
     return (
       <div>
         <div id="block-header">
           <AskButton buttonHandler={this.handleAskButtonClick} />
           <div id="block-title">Questions & Answers</div>
-          <AllQuestionsLink questionsCount="12" />
+          <AllQuestionsLink questionsCount={questions.length} restaurantID={restaurantID} />
           <div />
         </div>
         {showAskForm ? <AskForm /> : <div />}
