@@ -1,0 +1,4 @@
+package.json
+**/bundle.js
+**/*.test.js
+**/*.test.jsx
