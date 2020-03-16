@@ -1,5 +1,4 @@
 import React from 'react';
-import QWithAs from './QWithAs';
 
 class QWithAs extends React.Component {
   constructor(props) {
