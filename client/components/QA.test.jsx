@@ -9,7 +9,7 @@ import QsAndAsBox from './QsAndAsBox';
 it('contains all the correct components', () => {
   const wrap = Enzyme.shallow(<QA />);
   expect(wrap.exists());
-  expect(wrap.containsMatchingElement(<div id="title">Questions & Answers</div>)).toBeTruthy();
+  expect(wrap.containsMatchingElement(<div id="block-title">Questions & Answers</div>)).toBeTruthy();
   expect(wrap.containsMatchingElement(<AllQuestionsLink />)).toBeTruthy();
   expect(wrap.containsMatchingElement(<AskButton />)).toBeTruthy();
   expect(wrap.containsMatchingElement(<AskForm />)).toBeTruthy();

@@ -15,7 +15,7 @@ class QA extends React.Component {
   render() {
     return (
       <div id="fullblock">
-        <div id="title">Questions & Answers</div>
+        <div id="block-title">Questions & Answers</div>
         <AllQuestionsLink />
         <AskButton />
         <AskForm />
