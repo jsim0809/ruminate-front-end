@@ -7,10 +7,26 @@ import QsAndAsBox from './QsAndAsBox';
 class QA extends React.Component {
   constructor(props) {
     super(props);
+    const { restaurantID } = this.props;
     this.state = {
+      restaurantID,
       showAskForm: false,
+      questions: [],
     };
     this.handleAskButtonClick = this.handleAskButtonClick.bind(this);
+  }
+
+  componentDidMount() {
+    const { restaurantID } = this.state;
+    fetch(`http://localhost:3004/api/questions/${restaurantID}/`)
+      .then((data) => data.json())
+      .then((questions) => {
+        this.setState((oldState) => {
+          const newState = { ...oldState };
+          newState.questions = questions;
+          return newState;
+        });
+      });
   }
 
   handleAskButtonClick() {
