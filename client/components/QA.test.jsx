@@ -2,7 +2,6 @@ import React from 'react';
 import Enzyme from 'enzyme';
 import QA from './QA';
 
-
 it('renders correctly', () => {
   const wrapper = Enzyme.shallow(<QA />);
 

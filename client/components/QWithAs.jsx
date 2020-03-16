@@ -1,5 +1,6 @@
 import React from 'react';
 
+// TODO: Implement
 class QWithAs extends React.Component {
   constructor(props) {
     super(props);
@@ -11,10 +12,7 @@ class QWithAs extends React.Component {
   render() {
     return (
       <div>
-        <QWithAs />
-        <QWithAs />
-        <QWithAs />
-        <div>Scroller</div>
+        Question with answers
       </div>
     );
   }

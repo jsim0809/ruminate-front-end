@@ -1,5 +1,6 @@
 import React from 'react';
 
+// TODO: Implement
 class GuidelinesModal extends React.Component {
   constructor(props) {
     super(props);
