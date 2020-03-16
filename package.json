@@ -46,6 +46,7 @@
   "jest": {
     "setupFiles": [
       "<rootDir>/testing/setupEnzyme.js"
-    ]
+    ],
+    "testEnvironment": "node"
   }
 }

@@ -1,10 +1,17 @@
 import React from 'react';
 import Enzyme from 'enzyme';
 import QA from './QA';
+import AllQuestionsLink from './AllQuestionsLink';
+import AskButton from './AskButton';
+import AskForm from './AskForm';
+import QsAndAsBox from './QsAndAsBox';
 
-it('renders correctly', () => {
-  const wrapper = Enzyme.shallow(<QA />);
-
-  expect(wrapper.length).toBe(1);
-  expect(wrapper.text()).toBe(`Questions & Answers<AllQuestionsLink /><AskButton /><AskForm /><QsAndAsBox />`);
+it('contains all the correct components', () => {
+  const wrap = Enzyme.shallow(<QA />);
+  expect(wrap.exists());
+  expect(wrap.containsMatchingElement(<div id="title">Questions & Answers</div>)).toBeTruthy();
+  expect(wrap.containsMatchingElement(<AllQuestionsLink />)).toBeTruthy();
+  expect(wrap.containsMatchingElement(<AskButton />)).toBeTruthy();
+  expect(wrap.containsMatchingElement(<AskForm />)).toBeTruthy();
+  expect(wrap.containsMatchingElement(<QsAndAsBox />)).toBeTruthy();
 });
