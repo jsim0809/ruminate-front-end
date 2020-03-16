@@ -121,3 +121,20 @@ a {
 #ask-form-textfield:focus {
   border: solid 1px #000;
 }
+
+
+/* Modals */
+
+.modal-background {
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+#modal-window {
+
+}
