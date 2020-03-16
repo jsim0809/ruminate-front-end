@@ -1,4 +1,8 @@
 import React from 'react';
+import Headshot from './Headshot';
+import Flag from './Flag';
+import AnswerForm from './AnswerForm';
+import AnswersBox from './AnswersBox';
 
 // TODO: Implement
 class QWithAs extends React.Component {
@@ -12,7 +16,11 @@ class QWithAs extends React.Component {
   render() {
     return (
       <div>
-        Question with answers
+        <Headshot />
+        <div>Here is a question.</div>
+        <Flag />
+        <AnswerForm />
+        <AnswersBox />
       </div>
     );
   }
