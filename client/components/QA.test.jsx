@@ -12,6 +12,7 @@ it('contains all the correct components', () => {
   expect(wrap.containsMatchingElement(<div id="block-title">Questions & Answers</div>)).toBeTruthy();
   expect(wrap.containsMatchingElement(<AllQuestionsLink />)).toBeTruthy();
   expect(wrap.containsMatchingElement(<AskButton />)).toBeTruthy();
-  expect(wrap.containsMatchingElement(<AskForm />)).toBeTruthy();
   expect(wrap.containsMatchingElement(<QsAndAsBox />)).toBeTruthy();
+
+  // Write test testing button click functionality
 });

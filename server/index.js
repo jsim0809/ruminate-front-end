@@ -7,7 +7,7 @@ const PORT = 3004;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/', express.static(path.resolve(__dirname, '..', 'public')));
+app.use('/:restaurantID', express.static(path.resolve(__dirname, '..', 'public')));
 
 app.get('/api/questions/:restaurantID', (req, res) => {
   const { restaurantID } = req.params;
