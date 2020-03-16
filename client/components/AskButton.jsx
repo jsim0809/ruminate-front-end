@@ -1,19 +1,7 @@
 import React from 'react';
 
-class AskButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-  render() {
-    return (
-      // TODO: Make this a functioning button
-      <div>Ask</div>
-    );
-  }
-}
+const AskButton = ({ buttonHandler }) => (
+  <button type="button" id="ask-button" onClick={buttonHandler}>Ask a question</button>
+);
 
 export default AskButton;
