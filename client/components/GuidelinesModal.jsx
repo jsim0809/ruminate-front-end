@@ -11,7 +11,7 @@ class GuidelinesModal extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="guidelines-modal float-right">
         Posting guidelines
       </div>
     );

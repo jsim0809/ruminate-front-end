@@ -14,6 +14,7 @@ class QA extends React.Component {
       questions: [],
     };
     this.handleAskButtonClick = this.handleAskButtonClick.bind(this);
+    this.handleCancelButtonClick = this.handleCancelButtonClick.bind(this);
   }
 
   componentDidMount() {
@@ -21,6 +22,7 @@ class QA extends React.Component {
     fetch(`/api/questions/${restaurantID}/`)
       .then((data) => data.json())
       .then((questions) => {
+        console.log(questions);
         this.setState({
           questions,
         });
@@ -30,6 +32,12 @@ class QA extends React.Component {
   handleAskButtonClick() {
     this.setState({
       showAskForm: true,
+    });
+  }
+
+  handleCancelButtonClick() {
+    this.setState({
+      showAskForm: false,
     });
   }
 
@@ -43,7 +51,7 @@ class QA extends React.Component {
           <AllQuestionsLink questionsCount={questions.length} restaurantID={restaurantID} />
           <div />
         </div>
-        {showAskForm ? <AskForm /> : <div />}
+        {showAskForm ? <AskForm restaurantID={restaurantID} buttonHandler={this.handleCancelButtonClick} /> : <div />}
         <QsAndAsBox />
       </div>
     );
