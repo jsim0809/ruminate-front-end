@@ -14,7 +14,7 @@ class AnswerForm extends React.Component {
     return (
       <div>
         AnswerForm
-        <GuidelinesModal />
+        Guidelines
       </div>
     );
   }
