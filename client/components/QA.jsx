@@ -14,9 +14,10 @@ class QA extends React.Component {
       questions: [],
     };
     this.handleAskButtonClick = this.handleAskButtonClick.bind(this);
-    this.handleCancelButtonClick = this.handleCancelButtonClick.bind(this);
+    this.handleAskFormCancelClick = this.handleAskFormCancelClick.bind(this);
   }
 
+  // When the component mounts, fetch questions data from the server and save it in state.
   componentDidMount() {
     const { restaurantID } = this.state;
     fetch(`/api/questions/${restaurantID}/`)
@@ -35,7 +36,7 @@ class QA extends React.Component {
     });
   }
 
-  handleCancelButtonClick() {
+  handleAskFormCancelClick() {
     this.setState({
       showAskForm: false,
     });
@@ -45,13 +46,16 @@ class QA extends React.Component {
     const { restaurantID, showAskForm, questions } = this.state;
     return (
       <div>
+        {/* Header section */}
         <div id="block-header">
           <AskButton buttonHandler={this.handleAskButtonClick} />
           <div id="block-title">Questions & Answers</div>
           <AllQuestionsLink questionsCount={questions.length} restaurantID={restaurantID} />
           <div />
         </div>
-        {showAskForm ? <AskForm restaurantID={restaurantID} buttonHandler={this.handleCancelButtonClick} /> : <div />}
+        {/* AskForm -- only shows when button is clicked */}
+        {showAskForm ? <AskForm restaurantID={restaurantID} handleAskFormCancelClick={this.handleAskFormCancelClick} /> : null}
+        {/* Body section with lots of Qs and As */}
         <QsAndAsBox />
       </div>
     );

@@ -1,32 +1,39 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// Creates a reference to the modal-root node, which is separate from the main root node.
 const modalRoot = document.getElementById('modal-root');
 
 class GuidelinesModal extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
 
-    };
-
-    this.el = document.createElement('div');
+    // Creates a new div node object to constructed on.
+    this.modal = document.createElement('div');
   }
 
+  // When this React component initializes, mount this.modal to the modal root.
   componentDidMount() {
-    modalRoot.appendChild(this.el);
+    modalRoot.appendChild(this.modal);
   }
 
+  // When this React component is deinitialized, remove this.modal from the modal root.
   componentWillUnmount() {
-    modalRoot.removeChild(this.el);
+    modalRoot.removeChild(this.modal);
   }
 
+  // Constructs the new div object defined as this.modal.
+  // (It's passed as the second argument to ReactDOM.createPortal.)
   render() {
     const { restaurantID, handleGuidelinesCancelClick } = this.props;
     return ReactDOM.createPortal(
+      // Gray background
       <div className="modal-background">
+        {/* White box */}
         <div className="modal-guidelines">
+          {/* Cancel button */}
           <div className="modal-x-button" onClick={handleGuidelinesCancelClick}>&#x1F5D9;</div>
+          {/* Box text */}
           <div className="guidelines-header">Before you post...</div>
           <div className="guidelines-subheader">Please keep in mind:</div>
           <ul>
@@ -38,7 +45,7 @@ class GuidelinesModal extends React.Component {
           </ul>
         </div>
       </div>,
-      this.el,
+      this.modal,
     );
   }
 }
