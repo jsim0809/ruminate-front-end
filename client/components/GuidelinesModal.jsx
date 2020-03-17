@@ -22,11 +22,11 @@ class GuidelinesModal extends React.Component {
   }
 
   render() {
-    const { restaurantID } = this.props;
+    const { restaurantID, handleGuidelinesCancelClick } = this.props;
     return ReactDOM.createPortal(
       <div className="modal-background">
         <div className="modal-guidelines">
-          <div className="modal-x-button">&#x1F5D9;</div>
+          <div className="modal-x-button" onClick={handleGuidelinesCancelClick}>&#x1F5D9;</div>
           <div className="guidelines-header">Before you post...</div>
           <div className="guidelines-subheader">Please keep in mind:</div>
           <ul>
