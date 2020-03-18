@@ -10,9 +10,11 @@ class Headshot extends React.Component {
   }
 
   render() {
+    const { username, avatarUrl } = this.props;
     return (
       <div>
-        <div>Here is a picture that is clickable.</div>
+        <img className="avatar" src={avatarUrl} />
+        <div className="username">{username}</div>
       </div>
     );
   }

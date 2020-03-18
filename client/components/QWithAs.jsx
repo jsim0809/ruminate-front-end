@@ -9,18 +9,26 @@ class QWithAs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      showAnswerForm: false,
     };
   }
 
   render() {
+    const { question } = this.props;
     return (
-      <div>
-        <Headshot />
-        <div>Here is a question.</div>
-        <Flag />
-        <AnswerForm />
-        <AnswersBox />
+      <div key={question._id} className="container">
+        <div className="headshot">
+          <Headshot username={question.author.username} avatarUrl={question.author.avatarUrl} />
+        </div>
+        <div className="question-with-answers">
+          <div>{question.text}</div>
+          <div>{question.date}</div>
+          <Flag />
+          <div>Answer</div>
+          <div>See all X answers</div>
+          <AnswerForm />
+          <AnswersBox />
+        </div>
       </div>
     );
   }

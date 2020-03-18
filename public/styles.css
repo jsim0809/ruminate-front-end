@@ -168,10 +168,10 @@ a {
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 426px;
   height: 266px;
-  margin-top: -133px;
-  margin-left: -213px;
+  width: 426px;
+  margin-top: -181px;
+  margin-left: -261px;
   font-family: 'DM Sans', 'Arial', sans-serif;
   background-color: #fff;
   color: #4a4a4a;
@@ -207,12 +207,43 @@ a {
   left: 50%;
   width: 436px;
   height: 404px;
-  margin-left: -194px;
-  margin-top: -178px;
+  margin-left: -218px;
+  margin-top: -202px;
   cursor: not-allowed;
 }
 
 .modal-login img {
   width: 100%;
   height: 100%;
+}
+
+/* Question & Answers Grid container */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  margin-top: 8px;
+}
+
+.container .headshot {
+  grid-column: 1 / span 1;
+  padding: 12px;
+}
+
+.container .question-with-answers {
+  grid-column: 2 / span 1;
+}
+
+.avatar {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.username {
+  width: 80px;
+  margin-top: 8px;
+  text-align: center;
+  color: #000a12;
+  font-size: 11px;
 }

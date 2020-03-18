@@ -56,7 +56,7 @@ class QA extends React.Component {
         {/* AskForm -- only shows when button is clicked */}
         {showAskForm ? <AskForm restaurantID={restaurantID} handleAskFormCancelClick={this.handleAskFormCancelClick} /> : null}
         {/* Body section with lots of Qs and As */}
-        <QsAndAsBox />
+        <QsAndAsBox questions={questions} />
       </div>
     );
   }
