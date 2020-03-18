@@ -232,6 +232,7 @@ a {
 
 .container .question-with-answers {
   grid-column: 2 / span 1;
+  padding: 12px;
 }
 
 .avatar {
@@ -246,4 +247,22 @@ a {
   text-align: center;
   color: #000a12;
   font-size: 11px;
+}
+
+.question-text {
+  color: #000a12;
+  line-height: 22px;
+}
+
+.question-date {
+  margin-top: 4px;
+  color: #4a4a4a;
+  font-size: 11px;
+}
+
+.flag {
+  display: inline;
+  width: 13px;
+  height: 12px;
+  margin-bottom: -1px;
 }
