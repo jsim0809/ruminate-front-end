@@ -1,5 +1,6 @@
 import React from 'react';
 
+// THe upvote-downvote thing on the side of answers.
 class VoteSwitch extends React.Component {
   constructor(props) {
     super(props);
@@ -9,9 +10,16 @@ class VoteSwitch extends React.Component {
   }
 
   render() {
+    const { votes } = this.props;
     return (
-      // TODO: Make this a functioning button
-      <div>This is the vote switch.</div>
+      <div className="vote-container float-right">
+        <div className="upvote" />
+        <div className="vote-counter">
+          <div>{votes}</div>
+          <div className="votes-word">{votes === 1 ? 'Vote' : 'Votes'}</div>
+        </div>
+        <div className="downvote" />
+      </div>
     );
   }
 }
