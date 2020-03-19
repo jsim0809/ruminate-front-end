@@ -14,7 +14,8 @@
     "build-dev": "webpack --watch",
     "seed": "node database/seedDB.js",
     "test": "jest --coverage",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "mongo": "sudo mongod --dbpath ~/MongoDB/"
   },
   "dependencies": {
     "enzyme": "^3.11.0",
@@ -46,6 +47,7 @@
   "jest": {
     "setupFiles": [
       "<rootDir>/testing/setupEnzyme.js"
-    ]
+    ],
+    "testEnvironment": "jsdom"
   }
 }
