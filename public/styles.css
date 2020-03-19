@@ -289,7 +289,6 @@ a {
 }
 
 .small-flag {
-  display: inline;
   width: 10x;
   height: 11px;
   margin-left: 1px;
@@ -297,7 +296,6 @@ a {
 }
 
 .large-flag {
-  display: inline;
   width: 12x;
   height: 13px;
   margin-left: 1px;
@@ -407,4 +405,51 @@ a {
 
 .vote-container .downvote:hover {
   background-image: url(./images/downvote-selected.png);
+}
+
+/* Scroller */
+
+#scroller {
+  border-top: 1px solid #e5e5e5;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#scroller .large-white-button {
+  margin-left: -8px;
+}
+
+#scroller .scroll-number {
+  display: inline-block;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 40px;
+}
+
+#scroller .scroll-number-selected {
+  display: inline-block;
+  background-color: #f2f2f2;
+  height: 40px;
+  width: 40px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 2px;
+}
+
+#scroller .scroll-ellipsis {
+  display: inline-block;
+  height: 40px;
+  width: 32px;
+  color: #767676;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
 }

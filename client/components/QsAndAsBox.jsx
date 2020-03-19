@@ -1,5 +1,6 @@
 import React from 'react';
 import QWithAs from './QWithAs';
+import Scroller from './Scroller';
 
 // The large body section containing all the stored questions and answers, as well as the answer form and scroller.
 class QsAndAsBox extends React.Component {
@@ -8,6 +9,34 @@ class QsAndAsBox extends React.Component {
     this.state = {
       scrollerPage: 1,
     };
+    this.handlePreviousButtonClick = this.handlePreviousButtonClick.bind(this);
+    this.handlePageSelectionClick = this.handlePageSelectionClick.bind(this);
+    this.handleNextButtonClick = this.handleNextButtonClick.bind(this);
+  }
+
+  numPages() {
+    const { questions } = this.props;
+    return 1 + Math.floor((questions.length - 1) / 3);
+  }
+
+  handlePreviousButtonClick() {
+    const { scrollerPage } = this.state;
+    this.setState({
+      scrollerPage: scrollerPage - 1 || 1,
+    });
+  }
+
+  handlePageSelectionClick(e) {
+    this.setState({
+      scrollerPage: Number(e.target.innerText),
+    });
+  }
+
+  handleNextButtonClick() {
+    const { scrollerPage } = this.state;
+    this.setState({
+      scrollerPage: scrollerPage === this.numPages() ? scrollerPage : scrollerPage + 1,
+    });
   }
 
   render() {
@@ -19,7 +48,7 @@ class QsAndAsBox extends React.Component {
         {questions.slice((scrollerPage - 1) * 3, ((scrollerPage - 1) * 3) + 3).map((question) => (
           <QWithAs question={question} restaurantID={restaurantID} />
         ))}
-        <div>Scroller</div>
+        <Scroller currPage={scrollerPage} numPages={this.numPages()} handlePreviousButtonClick={this.handlePreviousButtonClick} handlePageSelectionClick={this.handlePageSelectionClick} handleNextButtonClick={this.handleNextButtonClick} />
       </div>
     );
   }

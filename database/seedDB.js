@@ -1,59 +1,6 @@
 const faker = require('faker');
 const Question = require('../database/index');
 
-// This is what an example datum looks like:
-//
-// const theFirstQuestion = new Question({
-//   text: 'What is the answer to the ultimate question of life, the universe, and everything?',
-//   restaurant_id: 99,
-//   author: {
-//     username: 'Lunkwill',
-//     avatarUrl: 'https://media-cdn.tripadvisor.com/media/photo-l/01/2a/fd/98/avatar.jpg',
-//     level: 100,
-//     cakeYear: 1970,
-//     hometown: 'Magrathea',
-//     contributions: 1,
-//     citiesVisited: 0,
-//     helpfulVotes: 2,
-//     reviewsCount: {
-//       1: 5, 4: 1,
-//     },
-//   },
-//   date: '2016-01-01T23:35:01.844Z',
-//   answers: [{
-//     text: '42.',
-//     author: {
-//       username: 'Deep Thought',
-//       level: 999,
-//       cakeYear: 1984,
-//       hometown: 'Magrathea',
-//       contributions: 85764,
-//       citiesVisited: 0,
-//       helpfulVotes: 8,
-//       reviewsCount: {
-//         1: 10, 2: 10, 3: 10, 4: 10, 5: 10,
-//       },
-//     },
-//     index: 0,
-//     votes: 374,
-//   },
-//   {
-//     text: '54.',
-//     author: {
-//       username: 'Arthur Dent',
-//       level: 47,
-//       cakeYear: 2003,
-//       hometown: 'London',
-//       contributions: 2,
-//       citiesVisited: 2,
-//       helpfulVotes: 60,
-//       reviewsCount: {},
-//     },
-//     index: 1,
-//     votes: 31,
-//   }],
-// });
-
 const seedDB = () => {
   for (let i = 0; i < 100; i += 1) {
     const numAnswers = Math.floor(Math.random() * 6);
