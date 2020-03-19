@@ -289,6 +289,7 @@ a {
 }
 
 .small-flag {
+  cursor: pointer;
   width: 10x;
   height: 11px;
   margin-left: 1px;
@@ -296,6 +297,7 @@ a {
 }
 
 .large-flag {
+  cursor: pointer;
   width: 12x;
   height: 13px;
   margin-left: 1px;

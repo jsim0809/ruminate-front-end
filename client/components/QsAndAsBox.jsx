@@ -40,13 +40,13 @@ class QsAndAsBox extends React.Component {
   }
 
   render() {
-    const { questions, restaurantID } = this.props;
+    const { questions, restaurantID, handleGuidelinesClick, handleLoginClick } = this.props;
     const { scrollerPage } = this.state;
     return (
       <div>
         {/* Selects the 3 questions that we want, depending on the scroller state. */}
         {questions.slice((scrollerPage - 1) * 3, ((scrollerPage - 1) * 3) + 3).map((question) => (
-          <QWithAs question={question} restaurantID={restaurantID} />
+          <QWithAs question={question} restaurantID={restaurantID} handleGuidelinesClick={handleGuidelinesClick} handleLoginClick={handleLoginClick} />
         ))}
         <Scroller currPage={scrollerPage} numPages={this.numPages()} handlePreviousButtonClick={this.handlePreviousButtonClick} handlePageSelectionClick={this.handlePageSelectionClick} handleNextButtonClick={this.handleNextButtonClick} />
       </div>

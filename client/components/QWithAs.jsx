@@ -3,14 +3,15 @@ import moment from 'moment';
 import Headshot from './Headshot';
 import AnswerForm from './AnswerForm';
 import AnswersBox from './AnswersBox';
+import LoginModal from './LoginModal';
 
-// TODO: Implement
 class QWithAs extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showAnswerForm: false,
       extendAnswers: false,
+      showLoginModal: false,
     };
     this.handleAnswerButtonClick = this.handleAnswerButtonClick.bind(this);
     this.handleAnswerFormCancelClick = this.handleAnswerFormCancelClick.bind(this);
@@ -36,7 +37,7 @@ class QWithAs extends React.Component {
   }
 
   render() {
-    const { question, restaurantID } = this.props;
+    const { question, restaurantID, handleGuidelinesClick, handleLoginClick } = this.props;
     const { showAnswerForm, extendAnswers } = this.state;
     return (
       <div key={question._id} className="container">
@@ -45,11 +46,11 @@ class QWithAs extends React.Component {
         </div>
         <div className="question-with-answers">
           <a className="question-text no-color-link" href={`/${restaurantID}/`}>{question.text}</a>
-          <div className="question-date">{moment(question.date).format('MMMM D, YYYY')} | <img className="small-flag" src="./images/flag-icon.png" /></div>
+          <div className="question-date">{moment(question.date).format('MMMM D, YYYY')} | <img className="small-flag" src="./images/flag-icon.png" onClick={handleLoginClick} /></div>
           <button type="button" className="small-black-button" onClick={this.handleAnswerButtonClick}>Answer</button>
           {question.answers.length > 1 ? <button type="button" className="small-white-button" onClick={this.handleExtendAnswersClick}>Show all {question.answers.length} answers</button> : null}
-          {showAnswerForm ? <AnswerForm restaurantID={restaurantID} handleAnswerFormCancelClick={this.handleAnswerFormCancelClick} /> : null}
-          <AnswersBox extendAnswers={extendAnswers} question={question} />
+          {showAnswerForm ? <AnswerForm restaurantID={restaurantID} handleAnswerFormCancelClick={this.handleAnswerFormCancelClick} handleGuidelinesClick={handleGuidelinesClick} handleLoginClick={handleLoginClick} /> : null}
+          <AnswersBox extendAnswers={extendAnswers} question={question} handleLoginClick={handleLoginClick} />
         </div>
       </div>
     );
