@@ -3,7 +3,6 @@ import moment from 'moment';
 import Headshot from './Headshot';
 import AnswerForm from './AnswerForm';
 import AnswersBox from './AnswersBox';
-import LoginModal from './LoginModal';
 
 class QWithAs extends React.Component {
   constructor(props) {
@@ -11,7 +10,6 @@ class QWithAs extends React.Component {
     this.state = {
       showAnswerForm: false,
       extendAnswers: false,
-      showLoginModal: false,
     };
     this.handleAnswerButtonClick = this.handleAnswerButtonClick.bind(this);
     this.handleAnswerFormCancelClick = this.handleAnswerFormCancelClick.bind(this);
@@ -47,7 +45,8 @@ class QWithAs extends React.Component {
         <div className="question-with-answers">
           <a className="question-text no-color-link" href={`/${restaurantID}/`}>{question.text}</a>
           {/* Uses an invisible <span> that becomes visible when the flag is hovered over. */}
-          <div className="question-date">{moment(question.date).format('MMMM D, YYYY')} | <span><img className="small-flag" src="./images/flag-icon.png" onClick={handleLoginClick} /><span className="flag-tooltip">Problem with this question?</span></span></div>
+          <div className="question-date">
+            {moment(question.date).format('MMMM D, YYYY')} | <span><img className="small-flag" src="./images/flag-icon.png" onClick={handleLoginClick} /><span className="flag-tooltip">Problem with this question?</span></span></div>
           <button type="button" className="small-black-button" onClick={this.handleAnswerButtonClick}>Answer</button>
           {question.answers.length > 1 ? <button type="button" className="small-white-button" onClick={this.handleExtendAnswersClick}>Show all {question.answers.length} answers</button> : null}
           {showAnswerForm ? <AnswerForm restaurantID={restaurantID} handleAnswerFormCancelClick={this.handleAnswerFormCancelClick} handleGuidelinesClick={handleGuidelinesClick} handleLoginClick={handleLoginClick} /> : null}
