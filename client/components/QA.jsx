@@ -81,7 +81,7 @@ class QA extends React.Component {
       <div>
         {/* Header section */}
         <div id="block-header">
-          <AskButton buttonHandler={this.handleAskButtonClick} />
+          <AskButton handleAskButtonClick={this.handleAskButtonClick} />
           <div id="block-title">Questions & Answers</div>
           <AllQuestionsLink questionsCount={questions.length} restaurantID={restaurantID} />
           <div />
