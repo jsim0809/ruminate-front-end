@@ -304,6 +304,43 @@ a {
   margin-bottom: -1px;
 }
 
+/* Flag tooltips */
+
+.flag-tooltip {
+  z-index: 100;
+  visibility: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  margin-left: 12px;
+  margin-top: -20px;
+  background-color: #fff;
+  color: #2c2c2c;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.35);
+  padding: 18px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.flag-tooltip::after {
+  z-index: 101;
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+}
+
+.large-flag:hover + .flag-tooltip {
+  visibility: visible;
+}
+
+.small-flag:hover + .flag-tooltip {
+  visibility: visible;
+}
+
 /* Popup "Answer a question" form */
 
 .answer-form {
@@ -407,6 +444,43 @@ a {
 
 .vote-container .downvote:hover {
   background-image: url(./images/downvote-selected.png);
+}
+
+/* Tooltips */
+
+.vote-tooltip {
+  z-index: 100;
+  visibility: hidden;
+  position: absolute;
+  box-sizing: border-box;
+  margin-left: -127px;
+  margin-top: -14px;
+  background-color: #fff;
+  color: #2c2c2c;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.35);
+  padding: 18px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.vote-tooltip::after {
+  z-index: 101;
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+}
+
+.vote-container .upvote:hover .vote-tooltip {
+  visibility: visible;
+}
+
+.vote-container .downvote:hover .vote-tooltip {
+  visibility: visible;
 }
 
 /* Scroller */
