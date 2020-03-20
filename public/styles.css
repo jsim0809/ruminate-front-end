@@ -529,36 +529,3 @@ a {
   text-align: center;
   line-height: 40px;
 }
-
-/* User popups */
-
-.user-hoverable:hover .user-popup {
-  visibility: visible;
-}
-
-.user-popup {
-  z-index: 100;
-  visibility: hidden;
-  position: absolute;
-  box-sizing: border-box;
-  margin-left: 12px;
-  margin-top: -20px;
-  background-color: #fff;
-  color: #2c2c2c;
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.35);
-  padding: 18px;
-  font-size: 12px;
-  line-height: 16px;
-}
-
-.user-popup::after {
-  z-index: 101;
-  content: " ";
-  position: absolute;
-  top: 50%;
-  left: -10px;
-  margin-top: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: transparent #fff transparent transparent;
-}

@@ -46,6 +46,7 @@ class QWithAs extends React.Component {
         </div>
         <div className="question-with-answers">
           <a className="question-text no-color-link" href={`/${restaurantID}/`}>{question.text}</a>
+          {/* Uses an invisible <span> that becomes visible when the flag is hovered over. */}
           <div className="question-date">{moment(question.date).format('MMMM D, YYYY')} | <span><img className="small-flag" src="./images/flag-icon.png" onClick={handleLoginClick} /><span className="flag-tooltip">Problem with this question?</span></span></div>
           <button type="button" className="small-black-button" onClick={this.handleAnswerButtonClick}>Answer</button>
           {question.answers.length > 1 ? <button type="button" className="small-white-button" onClick={this.handleExtendAnswersClick}>Show all {question.answers.length} answers</button> : null}
