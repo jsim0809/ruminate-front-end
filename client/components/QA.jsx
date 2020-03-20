@@ -31,7 +31,7 @@ class QA extends React.Component {
     fetch(`/api/questions/${restaurantID}/`)
       .then((data) => data.json())
       .then((questions) => {
-        console.log(questions);
+        console.log(JSON.stringify(questions));
         this.setState({
           questions,
         });
@@ -75,8 +75,7 @@ class QA extends React.Component {
   }
 
   render() {
-    const { restaurantID, showAskForm, questions } = this.state;
-    const { showGuidelinesModal, showLoginModal } = this.state;
+    const { restaurantID, showAskForm, questions, showGuidelinesModal, showLoginModal } = this.state;
     return (
       <div>
         {/* Header section */}
