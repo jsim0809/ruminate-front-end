@@ -31,7 +31,6 @@ class QA extends React.Component {
     fetch(`/api/questions/${restaurantID}/`)
       .then((data) => data.json())
       .then((questions) => {
-        console.log(JSON.stringify(questions));
         this.setState({
           questions,
         });
