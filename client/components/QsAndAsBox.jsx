@@ -45,8 +45,8 @@ class QsAndAsBox extends React.Component {
     return (
       <div>
         {/* Selects the 3 questions that we want, depending on the scroller state. */}
-        {questions.slice((scrollerPage - 1) * 3, ((scrollerPage - 1) * 3) + 3).map((question) => (
-          <QWithAs question={question} restaurantID={restaurantID} handleGuidelinesClick={handleGuidelinesClick} handleLoginClick={handleLoginClick} />
+        {questions.slice((scrollerPage - 1) * 3, ((scrollerPage - 1) * 3) + 3).map((question, index) => (
+          <QWithAs question={question} key={index} restaurantID={restaurantID} handleGuidelinesClick={handleGuidelinesClick} handleLoginClick={handleLoginClick} />
         ))}
         <Scroller currPage={scrollerPage} numPages={this.numPages()} handlePreviousButtonClick={this.handlePreviousButtonClick} handlePageSelectionClick={this.handlePageSelectionClick} handleNextButtonClick={this.handleNextButtonClick} />
       </div>

@@ -23,6 +23,7 @@
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "jest": "^25.1.0",
+    "jest-fetch-mock": "^3.0.3",
     "moment": "^2.24.0",
     "mongoose": "^5.9.4",
     "nodemon": "^2.0.2",
@@ -47,8 +48,10 @@
   },
   "jest": {
     "setupFiles": [
-      "<rootDir>/testing/setupEnzyme.js"
+      "<rootDir>/testing/setupEnzyme.js",
+      "<rootDir>/testing/setupJest.js"
     ],
-    "testEnvironment": "jsdom"
+    "testEnvironment": "jsdom",
+    "automock": false
   }
 }

@@ -4,7 +4,7 @@ import VoteSwitch from './VoteSwitch';
 // Extendable answers box. Is passed a boolean representing whether to extend or not.
 const AnswersBox = ({ extendAnswers, question, handleLoginClick }) => {
   const allAnswers = question.answers.map((answer) => (
-    <div className="answer-block">
+    <div className="answer-block" key={answer._id}>
       <div className="answer-left-line">
         <VoteSwitch votes={answer.votes} handleLoginClick={handleLoginClick} />
         {/* Uses an invisible <span> that becomes visible when the flag is hovered over. */}

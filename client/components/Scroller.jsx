@@ -3,7 +3,7 @@ import React from 'react';
 // Helper function to return the right kind of div tag depending on whether we are drawing the current page number or not.
 const renderNumber = (currPage, numPages, i, handlePageSelectionClick) => {
   const isSelectedPage = currPage === i;
-  return isSelectedPage ? <div className="scroll-number-selected">{i}</div> : <div className="scroll-number" onClick={handlePageSelectionClick}>{i}</div>;
+  return isSelectedPage ? <div className="scroll-number-selected" key={i}>{i}</div> : <div className="scroll-number" onClick={handlePageSelectionClick} key={i}>{i}</div>;
 };
 
 // Helper function to draw the complicated scroll bar numbering/ellipsis scheme
@@ -19,21 +19,21 @@ const mapScrollNumbers = (currPage, numPages, handlePageSelectionClick) => {
     for (let i = 1; i <= 6; i += 1) {
       result.push(renderNumber(currPage, numPages, i, handlePageSelectionClick));
     }
-    result.push(<div className="scroll-ellipsis">...</div>);
-    result.push(<div className="scroll-number" onClick={handlePageSelectionClick}>{numPages}</div>);
+    result.push(<div className="scroll-ellipsis" key="...">...</div>);
+    result.push(<div className="scroll-number" onClick={handlePageSelectionClick} key={numPages}>{numPages}</div>);
     // If more than 7 pages and selected on a higher number, put an ellipsis at the beginning. Render the current number +- 2.
   } else {
-    result.push(<div className="scroll-number" onClick={handlePageSelectionClick}>1</div>);
-    result.push(<div className="scroll-ellipsis">...</div>);
+    result.push(<div className="scroll-number" onClick={handlePageSelectionClick} key="1">1</div>);
+    result.push(<div className="scroll-ellipsis" key="...">...</div>);
     for (let i = currPage - 2; (i <= currPage + 2) && (i <= numPages); i += 1) {
       result.push(renderNumber(currPage, numPages, i, handlePageSelectionClick));
     }
     // If the current number is close enough to the total, no need a second ellipsis. But if it isn't, render an ellipsis.
     if (currPage === (numPages - 3)) {
-      result.push(<div className="scroll-number" onClick={handlePageSelectionClick}>{numPages}</div>);
+      result.push(<div className="scroll-number" onClick={handlePageSelectionClick} key={numPages}>{numPages}</div>);
     } else if (currPage < (numPages - 3)) {
-      result.push(<div className="scroll-ellipsis">...</div>);
-      result.push(<div className="scroll-number" onClick={handlePageSelectionClick}>{numPages}</div>);
+      result.push(<div className="scroll-ellipsis" key="...">...</div>);
+      result.push(<div className="scroll-number" onClick={handlePageSelectionClick} key={numPages}>{numPages}</div>);
     }
   }
   return result;
