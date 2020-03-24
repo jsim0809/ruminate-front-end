@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import path from 'path';
+import QA from './components/QA';
 
-ReactDOM.render(<div>This appears when Webpack is set up.</div>, document.getElementById('q-a'));
-
-module.exports = ReactDOM.render;
+ReactDOM.render(<QA restaurantID={path.basename(document.URL)} />, document.getElementById('q-a'));

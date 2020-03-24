@@ -13,13 +13,18 @@
     "build": "webpack",
     "build-dev": "webpack --watch",
     "seed": "node database/seedDB.js",
-    "test": "jest",
-    "lint": "eslint ."
+    "test": "jest --coverage",
+    "lint": "eslint .",
+    "mongo": "sudo mongod --dbpath ~/MongoDB/"
   },
   "dependencies": {
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
     "express": "^4.17.1",
     "faker": "^4.1.0",
     "jest": "^25.1.0",
+    "jest-fetch-mock": "^3.0.3",
+    "moment": "^2.24.0",
     "mongoose": "^5.9.4",
     "nodemon": "^2.0.2",
     "path": "^0.12.7",
@@ -40,5 +45,13 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^1.7.0"
+  },
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/testing/setupEnzyme.js",
+      "<rootDir>/testing/setupJest.js"
+    ],
+    "testEnvironment": "jsdom",
+    "automock": false
   }
 }

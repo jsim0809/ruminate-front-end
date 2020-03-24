@@ -3,15 +3,9 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/hr-fec-q-a', { useNewUrlParser: true });
 
 const db = mongoose.connection;
-<<<<<<< HEAD
-db.on('error', console.error.bind(console, 'database connection error:'));
+db.on('error', console.error.bind(console, 'Database connection error:'));
 db.once('open', () => {
   // console.log('Connection established with database "hr-fec-q-a".');
-=======
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => {
-  console.log('Connection established with database "hr-fec-q-a".');
->>>>>>> 18d2fae9b843029231723aff57ec7f77a5b175da
 });
 
 // STRETCH TODO: Store Authors as a separate document type
