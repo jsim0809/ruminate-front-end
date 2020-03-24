@@ -290,7 +290,7 @@ a {
 
 .small-flag {
   cursor: pointer;
-  width: 10x;
+  width: 10px;
   height: 11px;
   margin-left: 1px;
   margin-bottom: -1px;
@@ -298,7 +298,7 @@ a {
 
 .large-flag {
   cursor: pointer;
-  width: 12x;
+  width: 12px;
   height: 13px;
   margin-left: 1px;
   margin-bottom: -1px;
@@ -410,7 +410,7 @@ a {
 
 .vote-container .upvote {
   grid-row: 1 / span 1;
-  background-image: url(./images/upvote.png);
+  background-image: url(http://localhost:3004/images/upvote.png);
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -418,7 +418,7 @@ a {
 }
 
 .vote-container .upvote:hover {
-  background-image: url(./images/upvote-selected.png);
+  background-image: url(http://localhost:3004/images/upvote-selected.png);
 }
 
 .vote-container .vote-counter {
@@ -435,7 +435,7 @@ a {
 
 .vote-container .downvote {
   grid-row: 3 / span 1;
-  background-image: url(./images/downvote.png);
+  background-image: url(http://localhost:3004/images/downvote.png);
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -443,7 +443,7 @@ a {
 }
 
 .vote-container .downvote:hover {
-  background-image: url(./images/downvote-selected.png);
+  background-image: url(http://localhost:3004/images/downvote-selected.png);
 }
 
 /* Tooltips */

@@ -8,7 +8,20 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: 'babel-loader' },
+      { test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader'] },
+      { test: /\.css$/, exclude: /node_modules/, use: ['style-loader', 'css-loader'] },
+      {
+        test: /\.png$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              emitFile: false,
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {

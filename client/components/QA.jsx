@@ -28,7 +28,7 @@ class QA extends React.Component {
   // When the component mounts, fetch questions data from the server and save it in state.
   componentDidMount() {
     const { restaurantID } = this.state;
-    fetch(`/api/questions/${restaurantID}/`)
+    fetch(`http://localhost:3004/api/questions/${restaurantID}/`)
       .then((data) => data.json())
       .then((questions) => {
         this.setState({
