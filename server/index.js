@@ -45,8 +45,6 @@ app.get('/images/flag-icon.png', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'public', 'images', 'flag-icon.png'));
 });
 
-
-
 // STRETCH TODO: Store Authors as their own document type
 // app.get('/api/authors/:authorID', (req, res) => {
 //   // TODO: grab the author associated with the authorID
