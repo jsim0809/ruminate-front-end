@@ -120,8 +120,7 @@ a {
 #q-a {
   box-sizing: border-box;
   display: block;
-  width: auto;
-  max-width: 898px;
+  width: 54.2%;
   background-color: #fff;
   margin: 24px;
   border: solid 0.995px #e5e5e5;
