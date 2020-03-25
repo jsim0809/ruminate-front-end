@@ -97,7 +97,7 @@ class QA extends React.Component {
       zeroQuestions,
     } = this.state;
     return (
-      <div>
+      <div id="body">
         {/* Header section */}
         <div id="block-header">
           {zeroQuestions ? null : <AskButton handleAskButtonClick={this.handleAskButtonClick} />}

@@ -1,16 +1,8 @@
-/* Meyer reset */
-
-html,body,div,span,applet,object,iframe,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,dl,dt,dd,ol,ul,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,label,legend,p,blockquote,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-weight:inherit;font-style:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;}body{line-height:1;color:black;background:white;}:focus{outline:0;}table{border-collapse:collapse;border-spacing:0;}caption,th,td{text-align:left;font-weight:normal;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}ol,ul{list-style:none;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}blockquote:before,blockquote:after,q:before,q:after{content:"";}blockquote,q{quotes:"" "";}abbr,acronym{border:0;}
-
-/* My global styles */
-
-body {
-  background-color: #f2f2f2;
-}
+/* Meyer reset needed */
 
 /* Stop links from looking link-y */
 
-a {
+#q-a a {
   text-decoration: inherit;
 }
 
@@ -20,7 +12,7 @@ a {
 
 /* Useful classes */
 
-.large-black-button {
+#q-a .large-black-button {
   cursor: pointer;
   background-color: #000;
   color: #fff;
@@ -32,7 +24,7 @@ a {
   line-height: 18px;
 }
 
-.large-black-button-inactive {
+#q-a .large-black-button-inactive {
   background-color: #e0e0e0;
   color: #fff;
   border: solid 1px #e0e0e0;
@@ -43,7 +35,7 @@ a {
   line-height: 18px;
 }
 
-.large-white-button {
+#q-a .large-white-button {
   cursor: pointer;
   background-color: #fff;
   color: #000;
@@ -56,7 +48,7 @@ a {
   line-height: 18px;
 }
 
-.large-white-button-inactive {
+#q-a .large-white-button-inactive {
   background-color: #fff;
   color: #e0e0e0;
   margin-left: 8px;
@@ -68,7 +60,7 @@ a {
   line-height: 18px;
 }
 
-.small-black-button {
+#q-a .small-black-button {
   cursor: pointer;
   background-color: #000;
   color: #fff;
@@ -81,7 +73,7 @@ a {
   line-height: 16px;
 }
 
-.small-white-button {
+#q-a .small-white-button {
   cursor: pointer;
   background-color: #fff;
   color: #000;
@@ -95,23 +87,23 @@ a {
   line-height: 16px;
 }
 
-.large-black-button:hover, .small-black-button:hover {
+#q-a .large-black-button:hover, #q-a .small-black-button:hover {
   background-color: #292929;
   border: solid 1px #292929;
 }
 
-.large-white-button:hover, .small-white-button:hover {
+#q-a .large-white-button:hover, #q-a .small-white-button:hover {
   background-color: #d6d6d6;
 }
 
-.guidelines {
+#q-a .guidelines {
   cursor: pointer;
   color: #000;
   font-size: 12px;
   font-weight: 700;
 }
 
-.float-right {
+#q-a .float-right {
   float: right;
 }
 
@@ -132,20 +124,20 @@ a {
 
 /* Header section elements */
 
-#block-header {
+#q-a #block-header {
   padding-top: 12px;
   padding-bottom: 18px;
   border-bottom: solid 1px #e5e5e5;
 }
 
-#block-title {
+#q-a #block-title {
   color: #000a12;
   font-size: 28px;
   font-weight: 700;
   line-height: 39px;
 }
 
-#all-questions-link {
+#q-a #all-questions-link {
   color: #000;
   font-size: 14px;
   font-weight: 700;
@@ -153,24 +145,24 @@ a {
 
 /* Popup "Ask a question" form */
 
-#ask-form {
+#q-a #ask-form {
   border-bottom: solid 1px #e5e5e5;
   padding-top: 16px;
   padding-bottom: 20px;
 }
 
-#ask-form-header {
+#q-a #ask-form-header {
   color: #000a12;
   font-size: 20px;
 }
 
-#ask-form-subheader {
+#q-a #ask-form-subheader {
   padding-top: 12px;
   color: #4a4a4a;
   font-size: 12px;
 }
 
-#ask-form-textfield {
+#q-a #ask-form-textfield {
   box-sizing: border-box;
   width: 100%;
   resize: vertical;
@@ -183,14 +175,14 @@ a {
   font-size: 16px;
 }
 
-#ask-form-textfield:focus {
+#q-a #ask-form-textfield:focus {
   border: solid 1px #000;
 }
 
 
 /* Modals */
 
-.modal-background {
+#q-a .modal-background {
   z-index: 100;
   position: fixed;
   top: 0;
@@ -200,7 +192,7 @@ a {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-.modal-x-button {
+#q-a .modal-x-button {
   z-index: 102;
   position: absolute;
   top: 0;
@@ -215,13 +207,13 @@ a {
   transition: 0.2s;
 }
 
-.modal-x-button:hover {
+#q-a .modal-x-button:hover {
   opacity: 0.6;
 }
 
 /* Guidelines modal */
 
-.modal-guidelines {
+#q-a .modal-guidelines {
   z-index: 101;
   position: fixed;
   top: 50%;
@@ -239,18 +231,18 @@ a {
   padding: 48px;
 }
 
-.guidelines-header {
+#q-a .guidelines-header {
   color: #000;
   font-size: 21px;
   line-height: 16px;
   margin-bottom: 20px;
 }
 
-.guidelines-subheader {
+#q-a .guidelines-subheader {
   font-weight: 700;
 }
 
-.guidelines-list-element {
+#q-a .guidelines-list-element {
   list-style-type: disc;
   margin-top: 15px;
   margin-left: 15px;
@@ -258,7 +250,7 @@ a {
 
 /* Login modal */
 
-.modal-login {
+#q-a .modal-login {
   z-index: 101;
   position: fixed;
   top: 50%;
@@ -270,37 +262,37 @@ a {
   cursor: not-allowed;
 }
 
-.modal-login img {
+#q-a .modal-login img {
   width: 100%;
   height: 100%;
 }
 
 /* Question & Answers Grid container */
 
-.container {
+#q-a .container {
   display: grid;
   grid-template-columns: 2fr 9fr 1fr;
   margin-top: 8px;
   border-bottom: 1px solid #e5e5e5;
 }
 
-.container .headshot {
+#q-a .container .headshot {
   grid-column: 1 / span 1;
   padding: 12px;
 }
 
-.container .question-with-answers {
+#q-a .container .question-with-answers {
   grid-column: 2 / span 1;
   padding: 12px;
 }
 
-.avatar {
+#q-a .avatar {
   height: 80px;
   width: 80px;
   border-radius: 50%;
 }
 
-.username {
+#q-a .username {
   width: 80px;
   margin-top: 8px;
   text-align: center;
@@ -308,18 +300,18 @@ a {
   font-size: 11px;
 }
 
-.question-text {
+#q-a .question-text {
   color: #000a12;
   line-height: 21px;
 }
 
-.question-date {
+#q-a .question-date {
   margin-top: 6px;
   color: #4a4a4a;
   font-size: 12px;
 }
 
-.small-flag {
+#q-a .small-flag {
   cursor: pointer;
   width: 10px;
   height: 11px;
@@ -327,7 +319,7 @@ a {
   margin-bottom: -1px;
 }
 
-.large-flag {
+#q-a .large-flag {
   cursor: pointer;
   width: 12px;
   height: 13px;
@@ -337,7 +329,7 @@ a {
 
 /* Flag tooltips */
 
-.flag-tooltip {
+#q-a .flag-tooltip {
   z-index: 100;
   visibility: hidden;
   position: absolute;
@@ -352,7 +344,7 @@ a {
   line-height: 16px;
 }
 
-.flag-tooltip::after {
+#q-a .flag-tooltip::after {
   z-index: 101;
   content: " ";
   position: absolute;
@@ -364,21 +356,21 @@ a {
   border-color: transparent #fff transparent transparent;
 }
 
-.large-flag:hover + .flag-tooltip {
+#q-a .large-flag:hover + .flag-tooltip {
   visibility: visible;
 }
 
-.small-flag:hover + .flag-tooltip {
+#q-a .small-flag:hover + .flag-tooltip {
   visibility: visible;
 }
 
 /* Popup "Answer a question" form */
 
-.answer-form {
+#q-a .answer-form {
   margin-bottom: 20px;
 }
 
-.answer-form-header {
+#q-a .answer-form-header {
   margin-top: 36px;
   margin-bottom: 8px;
   color: #767676;
@@ -386,7 +378,7 @@ a {
   font-weight: 700;
 }
 
-.answer-form-textfield {
+#q-a .answer-form-textfield {
   box-sizing: border-box;
   width: 100%;
   resize: vertical;
@@ -398,48 +390,48 @@ a {
   font-size: 16px;
 }
 
-.answer-form-textfield:focus {
+#q-a .answer-form-textfield:focus {
   border: solid 1px #000;
 }
 
-.answer-form-buttonbar {
+#q-a .answer-form-buttonbar {
   margin-top: -12px;
 }
 
 /* Answer block */
 
-.answer-block {
+#q-a .answer-block {
   padding-top: 16px;
   padding-bottom: 16px;
 }
 
-.answer-left-line {
+#q-a .answer-left-line {
   border-left: 1px solid #e5e5e5;
   padding-left: 24px;
   min-height: 93px;
 }
 
-.answer-header {
+#q-a .answer-header {
   color: #000a12;
   font-size: 14px;
   line-height: 18px;
 }
 
-.answer-text {
+#q-a .answer-text {
   padding: 8px 16px 8px 0;
   color: #4a4a4a;
   font-size: 14px;
   line-height: 20px;
 }
 
-.vote-container {
+#q-a .vote-container {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   width: 31px;
   height: 93px;
 }
 
-.vote-container .upvote {
+#q-a .vote-container .upvote {
   grid-row: 1 / span 1;
   background-image: url(https://jeremy-fec.s3-us-west-2.amazonaws.com/upvote.png);
   background-size: contain;
@@ -448,11 +440,11 @@ a {
   margin: 0.5px;
 }
 
-.vote-container .upvote:hover {
+#q-a .vote-container .upvote:hover {
   background-image: url(https://jeremy-fec.s3-us-west-2.amazonaws.com/upvote-selected.png);
 }
 
-.vote-container .vote-counter {
+#q-a .vote-container .vote-counter {
   grid-row: 2 / span 1;
   color: #4a4a4a;
   font-size: 12px;
@@ -460,11 +452,11 @@ a {
   margin-top: 3px;
 }
 
-.vote-container .votes-word {
+#q-a .vote-container .votes-word {
   margin-top: 1px;
 }
 
-.vote-container .downvote {
+#q-a .vote-container .downvote {
   grid-row: 3 / span 1;
   background-image: url(https://jeremy-fec.s3-us-west-2.amazonaws.com/downvote.png);
   background-size: contain;
@@ -473,13 +465,13 @@ a {
   margin: 0.5px;
 }
 
-.vote-container .downvote:hover {
+#q-a .vote-container .downvote:hover {
   background-image: url(https://jeremy-fec.s3-us-west-2.amazonaws.com/downvote-selected.png);
 }
 
 /* Tooltips */
 
-.vote-tooltip {
+#q-a .vote-tooltip {
   z-index: 100;
   visibility: hidden;
   position: absolute;
@@ -494,7 +486,7 @@ a {
   line-height: 16px;
 }
 
-.vote-tooltip::after {
+#q-a .vote-tooltip::after {
   z-index: 101;
   content: " ";
   position: absolute;
@@ -506,17 +498,17 @@ a {
   border-color: transparent transparent transparent #fff;
 }
 
-.vote-container .upvote:hover .vote-tooltip {
+#q-a .vote-container .upvote:hover .vote-tooltip {
   visibility: visible;
 }
 
-.vote-container .downvote:hover .vote-tooltip {
+#q-a .vote-container .downvote:hover .vote-tooltip {
   visibility: visible;
 }
 
 /* Scroller */
 
-#scroller {
+#q-a #scroller {
   border-top: 1px solid #e5e5e5;
   border-bottom: 1px solid #e5e5e5;
   padding: 12px 10px;
@@ -525,11 +517,11 @@ a {
   justify-content: space-between;
 }
 
-#scroller .large-white-button {
+#q-a #scroller .large-white-button {
   margin-left: -8px;
 }
 
-#scroller .scroll-number {
+#q-a #scroller .scroll-number {
   display: inline-block;
   cursor: pointer;
   height: 40px;
@@ -540,7 +532,7 @@ a {
   line-height: 40px;
 }
 
-#scroller .scroll-number-selected {
+#q-a #scroller .scroll-number-selected {
   display: inline-block;
   background-color: #f2f2f2;
   height: 40px;
@@ -552,7 +544,7 @@ a {
   border-radius: 2px;
 }
 
-#scroller .scroll-ellipsis {
+#q-a #scroller .scroll-ellipsis {
   display: inline-block;
   height: 40px;
   width: 32px;
