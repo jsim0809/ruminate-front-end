@@ -15,10 +15,21 @@ class QWithAs extends React.Component {
     this.state = {
       showAnswerForm: false,
       extendAnswers: false,
+      zeroAnswers: false,
     };
     this.handleAnswerButtonClick = this.handleAnswerButtonClick.bind(this);
     this.handleAnswerFormCancelClick = this.handleAnswerFormCancelClick.bind(this);
     this.handleExtendAnswersClick = this.handleExtendAnswersClick.bind(this);
+  }
+
+  componentDidMount() {
+    const { question } = this.props;
+    if (question.answers.length === 0) {
+      this.setState({
+        showAnswerForm: true,
+        zeroAnswers: true,
+      });
+    }
   }
 
   handleAnswerButtonClick() {
@@ -46,7 +57,7 @@ class QWithAs extends React.Component {
       handleGuidelinesClick,
       handleLoginClick,
     } = this.props;
-    const { showAnswerForm, extendAnswers } = this.state;
+    const { showAnswerForm, extendAnswers, zeroAnswers } = this.state;
     return (
       <div key={question._id} className="container">
         <div className="headshot">
@@ -62,7 +73,7 @@ class QWithAs extends React.Component {
               <span className="flag-tooltip">Problem with this question?</span>
             </span>
           </div>
-          <button type="button" className="small-black-button" onClick={this.handleAnswerButtonClick}>Answer</button>
+          {zeroAnswers ? null : <button type="button" className="small-black-button" onClick={this.handleAnswerButtonClick}>Answer</button>}
           {question.answers.length > 1
             ? (
               <button type="button" className="small-white-button" onClick={this.handleExtendAnswersClick}>
@@ -76,6 +87,7 @@ class QWithAs extends React.Component {
                 handleAnswerFormCancelClick={this.handleAnswerFormCancelClick}
                 handleGuidelinesClick={handleGuidelinesClick}
                 handleLoginClick={handleLoginClick}
+                zeroAnswers={zeroAnswers}
               />
             )
             : null}

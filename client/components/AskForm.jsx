@@ -10,6 +10,7 @@ const AskForm = ({
   handleAskFormCancelClick,
   handleGuidelinesClick,
   handleLoginClick,
+  zeroQuestions,
 }) => (
   <div id="ask-form">
     {/* Prompt text */}
@@ -24,7 +25,7 @@ const AskForm = ({
     {/* Submit button -- pops up a fake login modal. */}
     <button type="button" className="large-black-button" onClick={handleLoginClick}>Submit</button>
     {/* Cancel button -- closes the form. */}
-    <button type="button" className="large-white-button" onClick={handleAskFormCancelClick}>Cancel</button>
+    {zeroQuestions ? null : <button type="button" className="large-white-button" onClick={handleAskFormCancelClick}>Cancel</button>}
   </div>
 );
 

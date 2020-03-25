@@ -5,7 +5,7 @@ import React from 'react';
  * Parent: QWithAs
  * Children: none
  */
-const AnswerForm = ({ handleAnswerFormCancelClick, handleGuidelinesClick, handleLoginClick }) => (
+const AnswerForm = ({ handleAnswerFormCancelClick, handleGuidelinesClick, handleLoginClick, zeroAnswers }) => (
   <div className="answer-form">
     {/* Prompt text */}
     <div className="answer-form-header">WHAT IS YOUR ANSWER?</div>
@@ -17,7 +17,7 @@ const AnswerForm = ({ handleAnswerFormCancelClick, handleGuidelinesClick, handle
       {/* Submit button -- pops up a fake login modal. */}
       <button type="button" className="small-black-button" onClick={handleLoginClick}>Submit</button>
       {/* Cancel button -- closes the form. */}
-      <button type="button" className="small-white-button" onClick={handleAnswerFormCancelClick}>Cancel</button>
+      {zeroAnswers ? null : <button type="button" className="small-white-button" onClick={handleAnswerFormCancelClick}>Cancel</button>}
     </div>
   </div>
 );

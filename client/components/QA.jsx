@@ -22,6 +22,7 @@ class QA extends React.Component {
       questions: [],
       showGuidelinesModal: false,
       showLoginModal: false,
+      zeroQuestions: false,
     };
     this.handleAskButtonClick = this.handleAskButtonClick.bind(this);
     this.handleAskFormCancelClick = this.handleAskFormCancelClick.bind(this);
@@ -41,6 +42,12 @@ class QA extends React.Component {
         this.setState({
           questions,
         });
+        if (questions.length === 0) {
+          this.setState({
+            showAskForm: true,
+            zeroQuestions: true,
+          });
+        }
       });
   }
 
@@ -83,16 +90,17 @@ class QA extends React.Component {
   render() {
     const {
       restaurantID,
-      showAskForm,
       questions,
+      showAskForm,
       showGuidelinesModal,
       showLoginModal,
+      zeroQuestions,
     } = this.state;
     return (
       <div>
         {/* Header section */}
         <div id="block-header">
-          <AskButton handleAskButtonClick={this.handleAskButtonClick} />
+          {zeroQuestions ? null : <AskButton handleAskButtonClick={this.handleAskButtonClick} />}
           <div id="block-title">Questions & Answers</div>
           <AllQuestionsLink questionsCount={questions.length} restaurantID={restaurantID} />
           <div />
@@ -104,6 +112,7 @@ class QA extends React.Component {
             handleAskFormCancelClick={this.handleAskFormCancelClick}
             handleGuidelinesClick={this.handleGuidelinesClick}
             handleLoginClick={this.handleLoginClick}
+            zeroQuestions={zeroQuestions}
           />
         ) : null}
         {/* Body section with lots of Qs and As */}
