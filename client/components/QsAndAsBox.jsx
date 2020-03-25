@@ -2,7 +2,12 @@ import React from 'react';
 import QWithAs from './QWithAs';
 import Scroller from './Scroller';
 
-// The large body section containing all the stored questions and answers, as well as the answer form and scroller.
+/**
+ * The large body section.
+ * Contains all stored questions and answers, and the scroller.
+ * Parent: QA
+ * Children: QWithAs, Scroller
+ */
 class QsAndAsBox extends React.Component {
   constructor(props) {
     super(props);
@@ -40,15 +45,37 @@ class QsAndAsBox extends React.Component {
   }
 
   render() {
-    const { questions, restaurantID, handleGuidelinesClick, handleLoginClick } = this.props;
+    const {
+      questions,
+      restaurantID,
+      handleGuidelinesClick,
+      handleLoginClick,
+    } = this.props;
     const { scrollerPage } = this.state;
     return (
       <div>
         {/* Selects the 3 questions that we want, depending on the scroller state. */}
-        {questions.slice((scrollerPage - 1) * 3, ((scrollerPage - 1) * 3) + 3).map((question, index) => (
-          <QWithAs question={question} key={index} restaurantID={restaurantID} handleGuidelinesClick={handleGuidelinesClick} handleLoginClick={handleLoginClick} />
-        ))}
-        <Scroller currPage={scrollerPage} numPages={this.numPages()} handlePreviousButtonClick={this.handlePreviousButtonClick} handlePageSelectionClick={this.handlePageSelectionClick} handleNextButtonClick={this.handleNextButtonClick} />
+        {questions.slice((scrollerPage - 1) * 3, ((scrollerPage - 1) * 3) + 3)
+          .map((question) => (
+            <QWithAs
+              question={question}
+              key={question._id}
+              restaurantID={restaurantID}
+              handleGuidelinesClick={handleGuidelinesClick}
+              handleLoginClick={handleLoginClick}
+            />
+          ))}
+        {questions.length > 3
+          ? (
+            <Scroller
+              currPage={scrollerPage}
+              numPages={this.numPages()}
+              handlePreviousButtonClick={this.handlePreviousButtonClick}
+              handlePageSelectionClick={this.handlePageSelectionClick}
+              handleNextButtonClick={this.handleNextButtonClick}
+            />
+          )
+          : null}
       </div>
     );
   }

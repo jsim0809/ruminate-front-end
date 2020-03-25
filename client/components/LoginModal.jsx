@@ -1,16 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-// Refactored to create modals in simpler way.
-
-const LoginModal = ({ restaurantID, handleLoginCancelClick }) => (
+/**
+ * Modal that pops up when any button requiring login is clicked.
+ * Parent: QA
+ * Children: none
+ */
+const LoginModal = ({ handleLoginCancelClick }) => (
   // Gray background
   <div className="modal-background">
     <div className="modal-login">
       {/* Cancel button */}
-      <div className="modal-x-button" onClick={handleLoginCancelClick}>&#x1F5D9;</div>
+      <div className="modal-x-button" onClick={handleLoginCancelClick} onKeyDown={handleLoginCancelClick} role="button">&#x1F5D9;</div>
       {/* Fake login picture */}
-      <img src="./images/login.png" />
+      <img src="./images/login.png" alt="Log in to GuiltTripAdvisor." />
     </div>
   </div>
 );

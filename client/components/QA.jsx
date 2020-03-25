@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'moment';
 import AllQuestionsLink from './AllQuestionsLink';
 import AskButton from './AskButton';
 import AskForm from './AskForm';
@@ -6,6 +7,11 @@ import QsAndAsBox from './QsAndAsBox';
 import GuidelinesModal from './GuidelinesModal';
 import LoginModal from './LoginModal';
 
+/**
+ * The overall Questions & Answers component. Contains everything else.
+ * Parent: none
+ * Children: AskButton, AllQuestionsLink, AskForm, QsAndAsBox, GuidelinesModal, LoginModal
+ */
 class QA extends React.Component {
   constructor(props) {
     super(props);
@@ -31,6 +37,7 @@ class QA extends React.Component {
     fetch(`http://localhost:3004/api/questions/${restaurantID}/`)
       .then((data) => data.json())
       .then((questions) => {
+        questions.sort((a, b) => new Moment(b.date).diff(new Moment(a.date)));
         this.setState({
           questions,
         });
@@ -74,7 +81,13 @@ class QA extends React.Component {
   }
 
   render() {
-    const { restaurantID, showAskForm, questions, showGuidelinesModal, showLoginModal } = this.state;
+    const {
+      restaurantID,
+      showAskForm,
+      questions,
+      showGuidelinesModal,
+      showLoginModal,
+    } = this.state;
     return (
       <div>
         {/* Header section */}
@@ -86,13 +99,34 @@ class QA extends React.Component {
         </div>
         {/* AskForm -- only shows when button is clicked */}
         {showAskForm ? (
-          <AskForm restaurantID={restaurantID} handleAskFormCancelClick={this.handleAskFormCancelClick} handleGuidelinesClick={this.handleGuidelinesClick} handleLoginClick={this.handleLoginClick} />
+          <AskForm
+            restaurantID={restaurantID}
+            handleAskFormCancelClick={this.handleAskFormCancelClick}
+            handleGuidelinesClick={this.handleGuidelinesClick}
+            handleLoginClick={this.handleLoginClick}
+          />
         ) : null}
         {/* Body section with lots of Qs and As */}
-        <QsAndAsBox questions={questions} restaurantID={restaurantID} handleGuidelinesClick={this.handleGuidelinesClick} handleLoginClick={this.handleLoginClick} />
+        <QsAndAsBox
+          questions={questions}
+          restaurantID={restaurantID}
+          handleGuidelinesClick={this.handleGuidelinesClick}
+          handleLoginClick={this.handleLoginClick}
+        />
         {/* Modals */}
-        {showGuidelinesModal ? <GuidelinesModal restaurantID={restaurantID} handleGuidelinesCancelClick={this.handleGuidelinesCancelClick} /> : null}
-        {showLoginModal ? <LoginModal handleLoginCancelClick={this.handleLoginCancelClick} /> : null}
+        {showGuidelinesModal
+          ? (
+            <GuidelinesModal
+              restaurantID={restaurantID}
+              handleGuidelinesCancelClick={this.handleGuidelinesCancelClick}
+            />
+          )
+          : null}
+        {showLoginModal
+          ? (
+            <LoginModal handleLoginCancelClick={this.handleLoginCancelClick} />
+          )
+          : null}
       </div>
     );
   }

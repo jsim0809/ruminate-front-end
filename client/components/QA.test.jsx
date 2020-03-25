@@ -12,6 +12,10 @@ import Scroller from './Scroller';
 import AnswerForm from './AnswerForm';
 import VoteSwitch from './VoteSwitch';
 
+/**
+ * Testing suite
+ */
+
 it('exists and contains all the correct components', () => {
   const wrap = Enzyme.mount(<QA />);
   expect(wrap.exists());

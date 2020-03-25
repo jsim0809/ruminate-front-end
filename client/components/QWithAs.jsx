@@ -4,6 +4,11 @@ import Headshot from './Headshot';
 import AnswerForm from './AnswerForm';
 import AnswersBox from './AnswersBox';
 
+/**
+ * Contains one question, the answer form, and all answers to that question.
+ * Parent: QsAndAsBox
+ * Children: Headshot, AnswerForm, AnswersBox
+ */
 class QWithAs extends React.Component {
   constructor(props) {
     super(props);
@@ -35,7 +40,12 @@ class QWithAs extends React.Component {
   }
 
   render() {
-    const { question, restaurantID, handleGuidelinesClick, handleLoginClick } = this.props;
+    const {
+      question,
+      restaurantID,
+      handleGuidelinesClick,
+      handleLoginClick,
+    } = this.props;
     const { showAnswerForm, extendAnswers } = this.state;
     return (
       <div key={question._id} className="container">
@@ -46,11 +56,34 @@ class QWithAs extends React.Component {
           <a className="question-text no-color-link" href={`/${restaurantID}/`}>{question.text}</a>
           {/* Uses an invisible <span> that becomes visible when the flag is hovered over. */}
           <div className="question-date">
-            {moment(question.date).format('MMMM D, YYYY')} | <span><img className="small-flag" src="http://localhost:3004/images/flag-icon.png" onClick={handleLoginClick} /><span className="flag-tooltip">Problem with this question?</span></span></div>
+            {`${moment(question.date).format('MMMM D, YYYY')} | `}
+            <span>
+              <img className="small-flag" src="http://localhost:3004/images/flag-icon.png" onClick={handleLoginClick} onKeyDown={handleLoginClick} alt="Report flag" />
+              <span className="flag-tooltip">Problem with this question?</span>
+            </span>
+          </div>
           <button type="button" className="small-black-button" onClick={this.handleAnswerButtonClick}>Answer</button>
-          {question.answers.length > 1 ? <button type="button" className="small-white-button" onClick={this.handleExtendAnswersClick}>Show all {question.answers.length} answers</button> : null}
-          {showAnswerForm ? <AnswerForm restaurantID={restaurantID} handleAnswerFormCancelClick={this.handleAnswerFormCancelClick} handleGuidelinesClick={handleGuidelinesClick} handleLoginClick={handleLoginClick} /> : null}
-          <AnswersBox extendAnswers={extendAnswers} question={question} handleLoginClick={handleLoginClick} />
+          {question.answers.length > 1
+            ? (
+              <button type="button" className="small-white-button" onClick={this.handleExtendAnswersClick}>
+                {`Show all ${question.answers.length} answers`}
+              </button>
+            )
+            : null}
+          {showAnswerForm
+            ? (
+              <AnswerForm
+                handleAnswerFormCancelClick={this.handleAnswerFormCancelClick}
+                handleGuidelinesClick={handleGuidelinesClick}
+                handleLoginClick={handleLoginClick}
+              />
+            )
+            : null}
+          <AnswersBox
+            extendAnswers={extendAnswers}
+            question={question}
+            handleLoginClick={handleLoginClick}
+          />
         </div>
       </div>
     );
