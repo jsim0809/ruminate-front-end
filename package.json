@@ -24,7 +24,6 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "express": "^4.17.1",
     "faker": "^4.1.0",
-    "file-loader": "^6.0.0",
     "jest": "^25.1.0",
     "jest-fetch-mock": "^3.0.3",
     "moment": "^2.24.0",
