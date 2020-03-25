@@ -442,7 +442,7 @@ a {
 
 .vote-container .upvote {
   grid-row: 1 / span 1;
-  background-image: url(http://localhost:3004/images/upvote.png);
+  background-image: url(https://jeremy-fec.s3-us-west-2.amazonaws.com/upvote.png);
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -450,7 +450,7 @@ a {
 }
 
 .vote-container .upvote:hover {
-  background-image: url(http://localhost:3004/images/upvote-selected.png);
+  background-image: url(https://jeremy-fec.s3-us-west-2.amazonaws.com/upvote-selected.png);
 }
 
 .vote-container .vote-counter {
@@ -467,7 +467,7 @@ a {
 
 .vote-container .downvote {
   grid-row: 3 / span 1;
-  background-image: url(http://localhost:3004/images/downvote.png);
+  background-image: url(https://jeremy-fec.s3-us-west-2.amazonaws.com/downvote.png);
   background-size: contain;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -475,7 +475,7 @@ a {
 }
 
 .vote-container .downvote:hover {
-  background-image: url(http://localhost:3004/images/downvote-selected.png);
+  background-image: url(https://jeremy-fec.s3-us-west-2.amazonaws.com/downvote-selected.png);
 }
 
 /* Tooltips */

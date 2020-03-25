@@ -70,7 +70,7 @@ class QWithAs extends React.Component {
           <div className="question-date">
             {`${moment(question.date).format('MMMM D, YYYY')} | `}
             <span>
-              <img className="small-flag" src="http://localhost:3004/images/flag-icon.png" onClick={handleLoginClick} onKeyDown={handleLoginClick} alt="Report flag" />
+              <img className="small-flag" src="https://jeremy-fec.s3-us-west-2.amazonaws.com/flag-icon.png" onClick={handleLoginClick} onKeyDown={handleLoginClick} alt="Report flag" />
               <span className="flag-tooltip">Problem with this question?</span>
             </span>
           </div>

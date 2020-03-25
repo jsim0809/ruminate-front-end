@@ -16,7 +16,7 @@ const AnswersBox = ({ extendAnswers, question, handleLoginClick }) => {
         <div className="answer-header">
           {`Response from ${answer.author.username} | Reviewed this property | `}
           <span>
-            <img className="large-flag" alt="Report this answer" src="http://localhost:3004/images/flag-icon.png" onClick={handleLoginClick} onKeyDown={handleLoginClick} />
+            <img className="large-flag" alt="Report this answer" src="https://jeremy-fec.s3-us-west-2.amazonaws.com/flag-icon.png" onClick={handleLoginClick} onKeyDown={handleLoginClick} />
             <span className="flag-tooltip">Problem with this answer?</span>
           </span>
         </div>

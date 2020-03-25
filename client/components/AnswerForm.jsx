@@ -5,7 +5,12 @@ import React from 'react';
  * Parent: QWithAs
  * Children: none
  */
-const AnswerForm = ({ handleAnswerFormCancelClick, handleGuidelinesClick, handleLoginClick, zeroAnswers }) => (
+const AnswerForm = ({
+  handleAnswerFormCancelClick,
+  handleGuidelinesClick,
+  handleLoginClick,
+  zeroAnswers,
+}) => (
   <div className="answer-form">
     {/* Prompt text */}
     <div className="answer-form-header">WHAT IS YOUR ANSWER?</div>

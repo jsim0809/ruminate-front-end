@@ -12,7 +12,7 @@ const LoginModal = ({ handleLoginCancelClick }) => (
       {/* Cancel button */}
       <div className="modal-x-button" onClick={handleLoginCancelClick} onKeyDown={handleLoginCancelClick} role="button">&#x1F5D9;</div>
       {/* Fake login picture */}
-      <img src="./images/login.png" alt="Log in to GuiltTripAdvisor." />
+      <img src="https://jeremy-fec.s3-us-west-2.amazonaws.com/login.png" alt="Log in to GuiltTripAdvisor." />
     </div>
   </div>
 );
