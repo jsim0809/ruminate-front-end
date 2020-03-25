@@ -45,8 +45,9 @@ class QWithAs extends React.Component {
   }
 
   handleExtendAnswersClick() {
+    const { extendAnswers } = this.state;
     this.setState({
-      extendAnswers: true,
+      extendAnswers: !extendAnswers,
     });
   }
 
@@ -77,7 +78,7 @@ class QWithAs extends React.Component {
           {question.answers.length > 1
             ? (
               <button type="button" className="small-white-button" onClick={this.handleExtendAnswersClick}>
-                {`Show all ${question.answers.length} answers`}
+                {extendAnswers ? 'Hide all answers' : `Show all ${question.answers.length} answers`}
               </button>
             )
             : null}
