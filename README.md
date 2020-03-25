@@ -17,27 +17,21 @@ Collaborating team members, who each worked on a separate component, were Kathar
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+2. [Requirements](#requirements)
 
 ## Usage
 
-> Some usage instructions
+This repo creates a server listening on port 3004. To get the server running, navigate to the root directory, then:
+
+```sh
+npm install
+npm run seed
+npm run build
+npm run start
+```
 
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
-- etc
-
-## Development
-
-### Installing Dependencies
-
-From within the root directory:
-
-```sh
-npm install -g webpack
-npm install
-```
