@@ -32,12 +32,35 @@ a {
   line-height: 18px;
 }
 
+.large-black-button-inactive {
+  background-color: #e0e0e0;
+  color: #fff;
+  border: solid 1px #e0e0e0;
+  border-radius: 3px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
 .large-white-button {
   cursor: pointer;
   background-color: #fff;
   color: #000;
   margin-left: 8px;
   border: solid 1px #000;
+  border-radius: 3px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.large-white-button-inactive {
+  background-color: #fff;
+  color: #e0e0e0;
+  margin-left: 8px;
+  border: solid 1px #e0e0e0;
   border-radius: 3px;
   padding: 8px 16px;
   font-size: 14px;
@@ -70,6 +93,15 @@ a {
   font-size: 12px;
   font-weight: 700;
   line-height: 16px;
+}
+
+.large-black-button:hover, .small-black-button:hover {
+  background-color: #292929;
+  border: solid 1px #292929;
+}
+
+.large-white-button:hover, .small-white-button:hover {
+  background-color: #d6d6d6;
 }
 
 .guidelines {

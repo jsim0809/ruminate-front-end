@@ -46,15 +46,19 @@ const Scroller = ({
   numPages,
   handlePreviousButtonClick,
   handlePageSelectionClick,
-  handleNextButtonClick
+  handleNextButtonClick,
 }) => (
-    <div id="scroller">
-      <button type="button" className="large-white-button" onClick={handlePreviousButtonClick}>Previous</button>
-      <div id="scroll-numbers">
-        {mapScrollNumbers(currPage, numPages, handlePageSelectionClick)}
-      </div>
-      <button type="button" className="large-black-button" onClick={handleNextButtonClick}>Next</button>
+  <div id="scroller">
+    {currPage === 1
+      ? <button type="button" className="large-white-button-inactive">Previous</button>
+      : <button type="button" className="large-white-button" onClick={handlePreviousButtonClick}>Previous</button>}
+    <div id="scroll-numbers">
+      {mapScrollNumbers(currPage, numPages, handlePageSelectionClick)}
     </div>
-  );
+    {currPage === numPages
+      ? <button type="button" className="large-black-button-inactive">Next</button>
+      : <button type="button" className="large-black-button" onClick={handleNextButtonClick}>Next</button>}
+  </div>
+);
 
 export default Scroller;
