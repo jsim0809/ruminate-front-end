@@ -27,7 +27,7 @@ This repo creates a server listening on port 3004. To get the server running, na
 npm install
 npm run seed
 npm run build
-npm run start
+npm start
 ```
 
 ## Requirements
