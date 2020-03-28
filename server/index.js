@@ -22,6 +22,7 @@ app.get('/api/questions/:restaurantID', (req, res) => {
 });
 
 app.get('/api/bundle.js', (req, res) => {
+  console.log('====== ', req.header);
   if (req.header('Accept-Encoding').includes('br')) {
     req.url += '.br';
     res.set('Content-Encoding', 'br');
