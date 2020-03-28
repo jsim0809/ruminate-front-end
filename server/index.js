@@ -22,18 +22,8 @@ app.get('/api/questions/:restaurantID', (req, res) => {
 });
 
 app.get('/api/bundle.js', (req, res) => {
-  console.log('====== ', req.header);
-  if (req.header('Accept-Encoding').includes('br')) {
-    req.url += '.br';
-    res.set('Content-Encoding', 'br');
-    res.sendFile(path.resolve(__dirname, '..', 'public', 'bundle.js.br'));
-  } else if (req.header('Accept-Encoding').includes('gzip')) {
-    req.url += '.gz';
-    res.set('Content-Encoding', 'gzip');
-    res.sendFile(path.resolve(__dirname, '..', 'public', 'bundle.js.gz'));
-  } else {
-    res.sendFile(path.resolve(__dirname, '..', 'public', 'bundle.js'));
-  }
+  res.set('Content-Encoding', 'gzip');
+  res.sendFile(path.resolve(__dirname, '..', 'public', 'bundle.js.gz'));
 });
 
 // STRETCH TODO: Store Authors as their own document type
