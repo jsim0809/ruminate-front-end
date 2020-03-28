@@ -22,7 +22,15 @@ app.get('/api/questions/:restaurantID', (req, res) => {
 });
 
 app.get('/api/bundle.js', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'public', 'bundle.js'));
+  if (req.header('Accept-Encoding').includes('br')) {
+    req.url = req.url + '.br';
+    res.set('Content-Encoding', 'br');
+    res.set('Content-Type', 'application/javascript; charset=UTF-8');
+    res.sendFile(path.resolve(__dirname, '..', 'public', 'bundle.js.br'));
+  }
+  else {
+    res.sendFile(path.resolve(__dirname, '..', 'public', 'bundle.js'));
+  } 
 });
 
 // STRETCH TODO: Store Authors as their own document type
