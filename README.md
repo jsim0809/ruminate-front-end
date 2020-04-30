@@ -1,14 +1,8 @@
-# Project Name
+# Ruminate - Front End
 
-Guilt Trip Advisor - Q&A Component
+This is a mockup of a "Questions & Answers" component for a restaurant reviews app.
 
-This is a reverse-engineered copy of a "Questions & Answers" component found on Tripadvisor.com's Restaurants section.
-
-This component was created by Jeremy Sim in March 2020 as part of a software engineering exercise at HackReactor Seattle. The goal was to replicate an existing website module as closely as possible in looks and functionality, from scratch.
-
-It utilizes a MongoDB database, a server written using Express, and a React architecture for the client-facing front end.
-
-Collaborating team members, who each worked on a separate component, were Katharine Celentano, Seth Way, and Phonxay Champasouk.
+Built with HTML, CSS, MongoDB, Express.js, React, Node.js, and Docker.
 
 ## Related Projects
 
@@ -35,3 +29,7 @@ npm start
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
+
+## Screen capture
+
+![Screencast](https://i.imgur.com/Qp9I81j.gif)
