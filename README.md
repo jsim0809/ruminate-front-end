@@ -6,7 +6,7 @@ Built with HTML, CSS, MongoDB, Express.js, React, Node.js, and Docker.
 
 ## Related Projects
 
-  - https://github.com/guilttripadvisors
+  - https://github.com/find-and-dine
 
 ## Table of Contents
 
