@@ -1,4 +1,4 @@
-# Ruminate - Front End
+# Find and Dine
 
 This is a mockup of a "Questions & Answers" component for a restaurant reviews app.
 
